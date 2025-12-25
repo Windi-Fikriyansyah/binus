@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,27 +108,31 @@
         }
 
         .status-icon {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #fff;
             font-size: 14px;
         }
 
+        /* Upcoming (orange clock) */
         .status-icon.upcoming {
-            background-color: #ff9933;
+            background-color: #ff9f1c;
         }
 
-        .status-icon.overdue {
-            background-color: #ff4444;
-        }
-
+        /* Paid (green check) */
         .status-icon.paid {
             background-color: #4CAF50;
         }
+
+        /* Overdue (red exclamation) */
+        .status-icon.overdue {
+            background-color: #ff3b30;
+        }
+
 
         .payment-details {
             display: flex;
@@ -160,6 +165,7 @@
         }
     </style>
 </head>
+
 <body>
 
 
@@ -186,25 +192,88 @@
         </button>
     </div>
 
-<h3 class="semester-title">2025, Odd Semester</h3>
+    {{-- <h3 class="semester-title">2026, Odd Semester</h3>
+
+    <div class="payment-list">
+        @foreach ($evenSemesterPayments2026 as $payment)
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        @if ($payment->status === 'Upcoming')
+                            <i class="fa-solid fa-clock"></i>
+                        @elseif ($payment->status === 'Paid' || $payment->status === 'paid')
+                            <i class="fa-solid fa-check"></i>
+                        @elseif ($payment->status === 'Overdue')
+                            <i class="fa-solid fa-exclamation"></i>
+                        @endif
+                    </div>
+
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
+                </div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
+                </div>
+            </div>
+        @endforeach
+    </div> --}}
+
+    <h3 class="semester-title">2025, Even Semester</h3>
 
     <div class="payment-list">
         @foreach ($evenSemesterPayments2025 as $payment)
-        <div class="payment-item">
-            <div class="payment-info">
-                <div class="status-icon {{ strtolower($payment->status) }}">
-                    {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        @if ($payment->status === 'Upcoming')
+                            <i class="fa-solid fa-clock"></i>
+                        @elseif ($payment->status === 'Paid' || $payment->status === 'paid')
+                            <i class="fa-solid fa-check"></i>
+                        @elseif ($payment->status === 'Overdue')
+                            <i class="fa-solid fa-exclamation"></i>
+                        @endif
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
                 </div>
-                <div class="payment-details">
-                    <div class="payment-title">{{ $payment->title }}</div>
-                    <div class="payment-status">{{ $payment->status }}</div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
                 </div>
             </div>
-            <div class="payment-amount">
-                <div class="amount">{{$payment->nominal }}</div>
-                <div class="due-date">{{$payment->tanggal }}</div>
+        @endforeach
+    </div>
+
+    <h3 class="semester-title">2025, Odd Semester</h3>
+
+    <div class="payment-list">
+        @foreach ($oddSemesterPayments2025 as $payment)
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        @if ($payment->status === 'Upcoming')
+                            <i class="fa-solid fa-clock"></i>
+                        @elseif ($payment->status === 'Paid' || $payment->status === 'paid')
+                            <i class="fa-solid fa-check"></i>
+                        @elseif ($payment->status === 'Overdue')
+                            <i class="fa-solid fa-exclamation"></i>
+                        @endif
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
+                </div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
+                </div>
             </div>
-        </div>
         @endforeach
     </div>
 
@@ -212,21 +281,21 @@
 
     <div class="payment-list">
         @foreach ($evenSemesterPayments as $payment)
-        <div class="payment-item">
-            <div class="payment-info">
-                <div class="status-icon {{ strtolower($payment->status) }}">
-                    {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
                 </div>
-                <div class="payment-details">
-                    <div class="payment-title">{{ $payment->title }}</div>
-                    <div class="payment-status">{{ $payment->status }}</div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
                 </div>
             </div>
-            <div class="payment-amount">
-                <div class="amount">{{$payment->nominal }}</div>
-                <div class="due-date">{{$payment->tanggal }}</div>
-            </div>
-        </div>
         @endforeach
     </div>
 
@@ -235,21 +304,21 @@
 
     <div class="payment-list">
         @foreach ($oddSemesterPayments as $payment)
-        <div class="payment-item">
-            <div class="payment-info">
-                <div class="status-icon {{ strtolower($payment->status) }}">
-                    {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
                 </div>
-                <div class="payment-details">
-                    <div class="payment-title">{{ $payment->title }}</div>
-                    <div class="payment-status">{{ $payment->status }}</div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
                 </div>
             </div>
-            <div class="payment-amount">
-                <div class="amount">{{$payment->nominal }}</div>
-                <div class="due-date">{{$payment->tanggal }}</div>
-            </div>
-        </div>
         @endforeach
     </div>
 
@@ -257,21 +326,21 @@
 
     <div class="payment-list">
         @foreach ($eventSemesterPayments2023 as $payment)
-        <div class="payment-item">
-            <div class="payment-info">
-                <div class="status-icon {{ strtolower($payment->status) }}">
-                    {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
                 </div>
-                <div class="payment-details">
-                    <div class="payment-title">{{ $payment->title }}</div>
-                    <div class="payment-status">{{ $payment->status }}</div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
                 </div>
             </div>
-            <div class="payment-amount">
-                <div class="amount">{{$payment->nominal }}</div>
-                <div class="due-date">{{$payment->tanggal }}</div>
-            </div>
-        </div>
         @endforeach
     </div>
 
@@ -279,22 +348,23 @@
 
     <div class="payment-list">
         @foreach ($oddSemesterPayments2023 as $payment)
-        <div class="payment-item">
-            <div class="payment-info">
-                <div class="status-icon {{ strtolower($payment->status) }}">
-                    {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+            <div class="payment-item">
+                <div class="payment-info">
+                    <div class="status-icon {{ strtolower($payment->status) }}">
+                        {{ $payment->status == 'Overdue' ? '!' : ($payment->status == 'paid' ? '✓' : '') }}
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-title">{{ $payment->title }}</div>
+                        <div class="payment-status">{{ $payment->status }}</div>
+                    </div>
                 </div>
-                <div class="payment-details">
-                    <div class="payment-title">{{ $payment->title }}</div>
-                    <div class="payment-status">{{ $payment->status }}</div>
+                <div class="payment-amount">
+                    <div class="amount">{{ $payment->nominal }}</div>
+                    <div class="due-date">{{ $payment->tanggal }}</div>
                 </div>
             </div>
-            <div class="payment-amount">
-                <div class="amount">{{$payment->nominal }}</div>
-                <div class="due-date">{{$payment->tanggal }}</div>
-            </div>
-        </div>
         @endforeach
     </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,31 @@
         body {
             background-color: #f5f5f5;
         }
+
+        /* default */
+        .payment-card {
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        /* Overdue = merah */
+        .payment-card.overdue {
+            background-color: #d93830;
+        }
+
+        /* Upcoming = oranye */
+        .payment-card.upcoming {
+            background-color: #f7941d;
+        }
+
+        /* optional: Paid / lainnya */
+        .payment-card.paid {
+            background-color: #4caf50;
+        }
+
 
         .status-bar {
             background-color: #157fb1;
@@ -67,10 +93,13 @@
             color: white;
             padding: 20px 16px;
             padding-bottom: 100px;
-            border-bottom-left-radius: 20px; /* Radius hanya di bawah kiri */
-    border-bottom-right-radius: 20px; /* Radius hanya di bawah kanan */
-    margin: 0; /* Pastikan tidak ada margin agar menyatu dengan header */
-    overflow: hidden; /
+            border-bottom-left-radius: 20px;
+            /* Radius hanya di bawah kiri */
+            border-bottom-right-radius: 20px;
+            /* Radius hanya di bawah kanan */
+            margin: 0;
+            /* Pastikan tidak ada margin agar menyatu dengan header */
+            overflow: hidden;/
         }
 
         .summary-label {
@@ -85,34 +114,36 @@
         }
 
         .status-cards {
-                display: flex;
-                gap: 16px;
-                padding: 16px;
-                background-color: white;
-                border-radius: 12px;
-                margin: -80px 16px 16px; /* Mengangkat card agar overlap dengan background biru */
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk kesan floating */
-            }
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            background-color: white;
+            border-radius: 12px;
+            margin: -80px 16px 16px;
+            /* Mengangkat card agar overlap dengan background biru */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            /* Efek bayangan untuk kesan floating */
+        }
 
-            .status-card {
-                flex: 1;
-                text-align: center;
-                padding: 16px;
-                border-radius: 12px;
-            }
+        .status-card {
+            flex: 1;
+            text-align: center;
+            padding: 16px;
+            border-radius: 12px;
+        }
 
-            .status-icon {
-                background-color: #ff9933;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 8px;
-                color: white;
-                font-size: 20px;
-            }
+        .status-icon {
+            background-color: #ff9933;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            color: white;
+            font-size: 20px;
+        }
 
         .status-amount {
             font-size: 18px;
@@ -136,55 +167,57 @@
         }
 
         .payment-card {
-    background-color: #d93830;
-    color: white;
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 16px;
-    position: relative;
-}
+            background-color: #d93830;
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            position: relative;
+        }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
 
-.card-header i {
-    font-size: 18px;
-    color: white;
-}
+        .card-header i {
+            font-size: 18px;
+            color: white;
+        }
 
-.semester-tag {
-    background-color: white;
-    color: black;
-    padding: 4px 12px;
-    border-radius: 16px;
-    display: inline-block;
-    font-size: 14px;
-}
+        .semester-tag {
+            background-color: white;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 16px;
+            display: inline-block;
+            font-size: 14px;
+        }
 
-.show-detail {
-    margin-top: 12px;
-    text-align: center;
-}
+        .show-detail {
+            margin-top: 12px;
+            text-align: center;
+        }
 
-.show-detail hr {
-    border: 1px solid white;
-    margin: 10px 0;
-    width: 100%;  /* Membuat garis penuh */
-}
+        .show-detail hr {
+            border: 1px solid white;
+            margin: 10px 0;
+            width: 100%;
+            /* Membuat garis penuh */
+        }
 
-.show-detail-link {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
+        .show-detail-link {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-.show-detail-link:hover {
-    color: #ccc;  /* Warna saat hover */
-}
+        .show-detail-link:hover {
+            color: #ccc;
+            /* Warna saat hover */
+        }
 
 
         .payment-title {
@@ -202,9 +235,9 @@
             font-size: 14px;
             opacity: 0.9;
         }
-
     </style>
 </head>
+
 <body>
     <div class="status-bar">
 
@@ -223,10 +256,10 @@
 
     <div class="financial-summary">
         <div class="summary-label">Total Charge</div>
-        <div class="amount">Rp215,961,000.00</div>
+        <div class="amount">Rp263,411,000.00</div>
 
         <div class="summary-label">Total Payment</div>
-        <div class="amount">Rp207,561,000.00</div>
+        <div class="amount">Rp255,011,000.00</div>
     </div>
 
     <div class="status-cards">
@@ -252,22 +285,27 @@
             <a href="#" style="color: black; font-weight: bold; text-decoration: none;">See All</a>
         </div>
         @foreach ($overdue as $payment)
-        <div class="payment-card">
+            <div
+                class="payment-card
+    {{ strtolower($payment->status) === 'overdue' ? 'overdue' : '' }}
+    {{ strtolower($payment->status) === 'upcoming' ? 'upcoming' : '' }}
+">
 
-            <div class="card-header">
 
-                <div class="semester-tag">{{ $payment->jenis }}</div>
-                <i class="fa-solid fa-clock-rotate-left"></i>
+                <div class="card-header">
+
+                    <div class="semester-tag">{{ $payment->jenis }}</div>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <div class="payment-title">{{ $payment->title }}</div>
+                <div class="payment-amount">{{ $payment->nominal }}</div>
+                <div class="payment-due">{{ $payment->tanggal }}</div>
+                <div class="show-detail">
+                    <hr>
+                    <a href="#" class="show-detail-link">Show Detail</a>
+                </div>
+
             </div>
-            <div class="payment-title">{{ $payment->title }}</div>
-            <div class="payment-amount">{{ $payment->nominal }}</div>
-            <div class="payment-due">{{ $payment->tanggal }}</div>
-            <div class="show-detail">
-                <hr>
-                <a href="#" class="show-detail-link">Show Detail</a>
-            </div>
-
-        </div>
         @endforeach
 
 
@@ -275,4 +313,5 @@
 
     </div>
 </body>
+
 </html>
