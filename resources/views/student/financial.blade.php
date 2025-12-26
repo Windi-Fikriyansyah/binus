@@ -259,7 +259,7 @@
         <div class="amount">Rp263,411,000.00</div>
 
         <div class="summary-label">Total Payment</div>
-        <div class="amount">Rp255,011,000.00</div>
+        <div class="amount">Rp263,411,000.00</div>
     </div>
 
     <div class="status-cards">
@@ -267,7 +267,7 @@
             <div class="status-icon">
                 <i class="fas fa-hourglass-half"></i>
             </div>
-            <div class="status-amount">Rp8,400,000.00 </div>
+            <div class="status-amount">Rp0.00 </div>
             <div class="status-label">Outstanding</div>
         </div>
         <div class="status-card">
