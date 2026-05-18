@@ -199,7 +199,7 @@
             <div class="payment-item">
                 <div class="payment-info">
                     <div class="status-icon {{ strtolower($payment->status) }}">
-                        @if ($payment->status === 'upcoming')
+                        @if ($payment->status === 'Upcoming')
                             <i class="fa-solid fa-clock"></i>
                         @elseif ($payment->status === 'Paid' || $payment->status === 'paid')
                             <i class="fa-solid fa-check"></i>
