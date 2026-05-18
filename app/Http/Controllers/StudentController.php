@@ -33,10 +33,10 @@ class StudentController extends Controller
     public function summary()
     {
 
-        // $evenSemesterPayments2026 = DB::table('transaksi')
-        //     ->where('jenis', '2026, Odd Semester')
-        //     ->orderBy('id', 'asc')
-        //     ->get();
+        $evenSemesterPayments2026 = DB::table('transaksi')
+            ->where('jenis', '2026, Odd Semester')
+            ->orderBy('id', 'asc')
+            ->get();
 
         $evenSemesterPayments2025 = DB::table('transaksi')
             ->where('jenis', '2025, Even Semester')

@@ -192,7 +192,7 @@
         </button>
     </div>
 
-    {{-- <h3 class="semester-title">2026, Odd Semester</h3>
+    <h3 class="semester-title">2026, Odd Semester</h3>
 
     <div class="payment-list">
         @foreach ($evenSemesterPayments2026 as $payment)
@@ -219,7 +219,7 @@
                 </div>
             </div>
         @endforeach
-    </div> --}}
+    </div>
 
     <h3 class="semester-title">2025, Even Semester</h3>
 
