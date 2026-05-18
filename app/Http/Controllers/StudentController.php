@@ -82,6 +82,6 @@ class StudentController extends Controller
             ->orderBy('id', 'asc')
             ->get();
 
-        return view('student.summary', compact('evenSemesterPayments', 'oddSemesterPayments2025', 'oddSemesterPayments', 'eventSemesterPayments2023', 'oddSemesterPayments2023', 'evenSemesterPayments2025'));
+        return view('student.summary', compact('evenSemesterPayments', 'oddSemesterPayments2025', 'oddSemesterPayments', 'eventSemesterPayments2023', 'oddSemesterPayments2023', 'evenSemesterPayments2025','evenSemesterPayments2026'));
     }
 }
